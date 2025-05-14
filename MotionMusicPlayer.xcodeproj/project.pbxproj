@@ -1,0 +1,975 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2FE49E852DD462F000881556 /* WatchMotionData Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2FE49E622DD462EC00881556 /* WatchMotionData Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2FE49E422DD462D400881556 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FE49E282DD462D300881556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FE49E2F2DD462D300881556;
+			remoteInfo = MotionMusicPlayer;
+		};
+		2FE49E4C2DD462D400881556 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FE49E282DD462D300881556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FE49E2F2DD462D300881556;
+			remoteInfo = MotionMusicPlayer;
+		};
+		2FE49E722DD462F000881556 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FE49E282DD462D300881556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FE49E612DD462EC00881556;
+			remoteInfo = "WatchMotionData Watch App";
+		};
+		2FE49E7C2DD462F000881556 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FE49E282DD462D300881556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FE49E612DD462EC00881556;
+			remoteInfo = "WatchMotionData Watch App";
+		};
+		2FE49E832DD462F000881556 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FE49E282DD462D300881556 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FE49E612DD462EC00881556;
+			remoteInfo = "WatchMotionData Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2FE49E892DD462F000881556 /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				2FE49E852DD462F000881556 /* WatchMotionData Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2FE49E302DD462D300881556 /* MotionMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE49E412DD462D400881556 /* MotionMusicPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionMusicPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE49E4B2DD462D400881556 /* MotionMusicPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionMusicPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE49E622DD462EC00881556 /* WatchMotionData Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WatchMotionData Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE49E712DD462F000881556 /* WatchMotionData Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WatchMotionData Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FE49E7B2DD462F000881556 /* WatchMotionData Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WatchMotionData Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2FE49E322DD462D300881556 /* MotionMusicPlayer */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MotionMusicPlayer;
+			sourceTree = "<group>";
+		};
+		2FE49E442DD462D400881556 /* MotionMusicPlayerTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MotionMusicPlayerTests;
+			sourceTree = "<group>";
+		};
+		2FE49E4E2DD462D400881556 /* MotionMusicPlayerUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = MotionMusicPlayerUITests;
+			sourceTree = "<group>";
+		};
+		2FE49E632DD462EC00881556 /* WatchMotionData Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "WatchMotionData Watch App";
+			sourceTree = "<group>";
+		};
+		2FE49E742DD462F000881556 /* WatchMotionData Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "WatchMotionData Watch AppTests";
+			sourceTree = "<group>";
+		};
+		2FE49E7E2DD462F000881556 /* WatchMotionData Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "WatchMotionData Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FE49E2D2DD462D300881556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E3E2DD462D400881556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E482DD462D400881556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E5F2DD462EC00881556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E6E2DD462F000881556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E782DD462F000881556 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FE49E272DD462D300881556 = {
+			isa = PBXGroup;
+			children = (
+				2FE49E322DD462D300881556 /* MotionMusicPlayer */,
+				2FE49E442DD462D400881556 /* MotionMusicPlayerTests */,
+				2FE49E4E2DD462D400881556 /* MotionMusicPlayerUITests */,
+				2FE49E632DD462EC00881556 /* WatchMotionData Watch App */,
+				2FE49E742DD462F000881556 /* WatchMotionData Watch AppTests */,
+				2FE49E7E2DD462F000881556 /* WatchMotionData Watch AppUITests */,
+				2FE49E312DD462D300881556 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2FE49E312DD462D300881556 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FE49E302DD462D300881556 /* MotionMusicPlayer.app */,
+				2FE49E412DD462D400881556 /* MotionMusicPlayerTests.xctest */,
+				2FE49E4B2DD462D400881556 /* MotionMusicPlayerUITests.xctest */,
+				2FE49E622DD462EC00881556 /* WatchMotionData Watch App.app */,
+				2FE49E712DD462F000881556 /* WatchMotionData Watch AppTests.xctest */,
+				2FE49E7B2DD462F000881556 /* WatchMotionData Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FE49E2F2DD462D300881556 /* MotionMusicPlayer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FE49E552DD462D400881556 /* Build configuration list for PBXNativeTarget "MotionMusicPlayer" */;
+			buildPhases = (
+				2FE49E2C2DD462D300881556 /* Sources */,
+				2FE49E2D2DD462D300881556 /* Frameworks */,
+				2FE49E2E2DD462D300881556 /* Resources */,
+				2FE49E892DD462F000881556 /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FE49E842DD462F000881556 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2FE49E322DD462D300881556 /* MotionMusicPlayer */,
+			);
+			name = MotionMusicPlayer;
+			packageProductDependencies = (
+			);
+			productName = MotionMusicPlayer;
+			productReference = 2FE49E302DD462D300881556 /* MotionMusicPlayer.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2FE49E402DD462D400881556 /* MotionMusicPlayerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FE49E582DD462D400881556 /* Build configuration list for PBXNativeTarget "MotionMusicPlayerTests" */;
+			buildPhases = (
+				2FE49E3D2DD462D400881556 /* Sources */,
+				2FE49E3E2DD462D400881556 /* Frameworks */,
+				2FE49E3F2DD462D400881556 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FE49E432DD462D400881556 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2FE49E442DD462D400881556 /* MotionMusicPlayerTests */,
+			);
+			name = MotionMusicPlayerTests;
+			packageProductDependencies = (
+			);
+			productName = MotionMusicPlayerTests;
+			productReference = 2FE49E412DD462D400881556 /* MotionMusicPlayerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2FE49E4A2DD462D400881556 /* MotionMusicPlayerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FE49E5B2DD462D400881556 /* Build configuration list for PBXNativeTarget "MotionMusicPlayerUITests" */;
+			buildPhases = (
+				2FE49E472DD462D400881556 /* Sources */,
+				2FE49E482DD462D400881556 /* Frameworks */,
+				2FE49E492DD462D400881556 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FE49E4D2DD462D400881556 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2FE49E4E2DD462D400881556 /* MotionMusicPlayerUITests */,
+			);
+			name = MotionMusicPlayerUITests;
+			packageProductDependencies = (
+			);
+			productName = MotionMusicPlayerUITests;
+			productReference = 2FE49E4B2DD462D400881556 /* MotionMusicPlayerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		2FE49E612DD462EC00881556 /* WatchMotionData Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FE49E862DD462F000881556 /* Build configuration list for PBXNativeTarget "WatchMotionData Watch App" */;
+			buildPhases = (
+				2FE49E5E2DD462EC00881556 /* Sources */,
+				2FE49E5F2DD462EC00881556 /* Frameworks */,
+				2FE49E602DD462EC00881556 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				2FE49E632DD462EC00881556 /* WatchMotionData Watch App */,
+			);
+			name = "WatchMotionData Watch App";
+			packageProductDependencies = (
+			);
+			productName = "WatchMotionData Watch App";
+			productReference = 2FE49E622DD462EC00881556 /* WatchMotionData Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2FE49E702DD462F000881556 /* WatchMotionData Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FE49E8A2DD462F000881556 /* Build configuration list for PBXNativeTarget "WatchMotionData Watch AppTests" */;
+			buildPhases = (
+				2FE49E6D2DD462F000881556 /* Sources */,
+				2FE49E6E2DD462F000881556 /* Frameworks */,
+				2FE49E6F2DD462F000881556 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FE49E732DD462F000881556 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2FE49E742DD462F000881556 /* WatchMotionData Watch AppTests */,
+			);
+			name = "WatchMotionData Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "WatchMotionData Watch AppTests";
+			productReference = 2FE49E712DD462F000881556 /* WatchMotionData Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		2FE49E7A2DD462F000881556 /* WatchMotionData Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FE49E8D2DD462F000881556 /* Build configuration list for PBXNativeTarget "WatchMotionData Watch AppUITests" */;
+			buildPhases = (
+				2FE49E772DD462F000881556 /* Sources */,
+				2FE49E782DD462F000881556 /* Frameworks */,
+				2FE49E792DD462F000881556 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FE49E7D2DD462F000881556 /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				2FE49E7E2DD462F000881556 /* WatchMotionData Watch AppUITests */,
+			);
+			name = "WatchMotionData Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "WatchMotionData Watch AppUITests";
+			productReference = 2FE49E7B2DD462F000881556 /* WatchMotionData Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2FE49E282DD462D300881556 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					2FE49E2F2DD462D300881556 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					2FE49E402DD462D400881556 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 2FE49E2F2DD462D300881556;
+					};
+					2FE49E4A2DD462D400881556 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 2FE49E2F2DD462D300881556;
+					};
+					2FE49E612DD462EC00881556 = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					2FE49E702DD462F000881556 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 2FE49E612DD462EC00881556;
+					};
+					2FE49E7A2DD462F000881556 = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 2FE49E612DD462EC00881556;
+					};
+				};
+			};
+			buildConfigurationList = 2FE49E2B2DD462D300881556 /* Build configuration list for PBXProject "MotionMusicPlayer" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2FE49E272DD462D300881556;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2FE49E312DD462D300881556 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FE49E2F2DD462D300881556 /* MotionMusicPlayer */,
+				2FE49E402DD462D400881556 /* MotionMusicPlayerTests */,
+				2FE49E4A2DD462D400881556 /* MotionMusicPlayerUITests */,
+				2FE49E612DD462EC00881556 /* WatchMotionData Watch App */,
+				2FE49E702DD462F000881556 /* WatchMotionData Watch AppTests */,
+				2FE49E7A2DD462F000881556 /* WatchMotionData Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2FE49E2E2DD462D300881556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E3F2DD462D400881556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E492DD462D400881556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E602DD462EC00881556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E6F2DD462F000881556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E792DD462F000881556 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FE49E2C2DD462D300881556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E3D2DD462D400881556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E472DD462D400881556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E5E2DD462EC00881556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E6D2DD462F000881556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FE49E772DD462F000881556 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2FE49E432DD462D400881556 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FE49E2F2DD462D300881556 /* MotionMusicPlayer */;
+			targetProxy = 2FE49E422DD462D400881556 /* PBXContainerItemProxy */;
+		};
+		2FE49E4D2DD462D400881556 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FE49E2F2DD462D300881556 /* MotionMusicPlayer */;
+			targetProxy = 2FE49E4C2DD462D400881556 /* PBXContainerItemProxy */;
+		};
+		2FE49E732DD462F000881556 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FE49E612DD462EC00881556 /* WatchMotionData Watch App */;
+			targetProxy = 2FE49E722DD462F000881556 /* PBXContainerItemProxy */;
+		};
+		2FE49E7D2DD462F000881556 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FE49E612DD462EC00881556 /* WatchMotionData Watch App */;
+			targetProxy = 2FE49E7C2DD462F000881556 /* PBXContainerItemProxy */;
+		};
+		2FE49E842DD462F000881556 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FE49E612DD462EC00881556 /* WatchMotionData Watch App */;
+			targetProxy = 2FE49E832DD462F000881556 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		2FE49E532DD462D400881556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2FE49E542DD462D400881556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		2FE49E562DD462D400881556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MotionMusicPlayer/MotionMusicPlayer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MotionMusicPlayer/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cs396.MotionMusicPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		2FE49E572DD462D400881556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = MotionMusicPlayer/MotionMusicPlayer.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"MotionMusicPlayer/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cs396.MotionMusicPlayer;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		2FE49E592DD462D400881556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cs396.MotionMusicPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotionMusicPlayer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MotionMusicPlayer";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		2FE49E5A2DD462D400881556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cs396.MotionMusicPlayerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/MotionMusicPlayer.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/MotionMusicPlayer";
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		2FE49E5C2DD462D400881556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cs396.MotionMusicPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = MotionMusicPlayer;
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		2FE49E5D2DD462D400881556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cs396.MotionMusicPlayerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2,7";
+				TEST_TARGET_NAME = MotionMusicPlayer;
+				XROS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		2FE49E872DD462F000881556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchMotionData Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchMotionData;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = cs396.MotionMusicPlayer;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cs396.MotionMusicPlayer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		2FE49E882DD462F000881556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"WatchMotionData Watch App/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = WatchMotionData;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = cs396.MotionMusicPlayer;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = cs396.MotionMusicPlayer.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		2FE49E8B2DD462F000881556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cs396.WatchMotionData-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchMotionData Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WatchMotionData Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		2FE49E8C2DD462F000881556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cs396.WatchMotionData-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WatchMotionData Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/WatchMotionData Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+		2FE49E8E2DD462F000881556 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cs396.WatchMotionData-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "WatchMotionData Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Debug;
+		};
+		2FE49E8F2DD462F000881556 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "cs396.WatchMotionData-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "WatchMotionData Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 11.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FE49E2B2DD462D300881556 /* Build configuration list for PBXProject "MotionMusicPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE49E532DD462D400881556 /* Debug */,
+				2FE49E542DD462D400881556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FE49E552DD462D400881556 /* Build configuration list for PBXNativeTarget "MotionMusicPlayer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE49E562DD462D400881556 /* Debug */,
+				2FE49E572DD462D400881556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FE49E582DD462D400881556 /* Build configuration list for PBXNativeTarget "MotionMusicPlayerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE49E592DD462D400881556 /* Debug */,
+				2FE49E5A2DD462D400881556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FE49E5B2DD462D400881556 /* Build configuration list for PBXNativeTarget "MotionMusicPlayerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE49E5C2DD462D400881556 /* Debug */,
+				2FE49E5D2DD462D400881556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FE49E862DD462F000881556 /* Build configuration list for PBXNativeTarget "WatchMotionData Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE49E872DD462F000881556 /* Debug */,
+				2FE49E882DD462F000881556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FE49E8A2DD462F000881556 /* Build configuration list for PBXNativeTarget "WatchMotionData Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE49E8B2DD462F000881556 /* Debug */,
+				2FE49E8C2DD462F000881556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FE49E8D2DD462F000881556 /* Build configuration list for PBXNativeTarget "WatchMotionData Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FE49E8E2DD462F000881556 /* Debug */,
+				2FE49E8F2DD462F000881556 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2FE49E282DD462D300881556 /* Project object */;
+}
