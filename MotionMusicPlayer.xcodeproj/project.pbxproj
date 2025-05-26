@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2FCCD1A32DD5C77000711328 /* WatchConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FCCD1A22DD5C77000711328 /* WatchConnectivity.framework */; platformFilters = (ios, xros, ); };
 		2FE49E852DD462F000881556 /* WatchMotionData Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 2FE49E622DD462EC00881556 /* WatchMotionData Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		2FCCD1A22DD5C77000711328 /* WatchConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WatchConnectivity.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS18.2.sdk/System/Library/Frameworks/WatchConnectivity.framework; sourceTree = DEVELOPER_DIR; };
 		2FE49E302DD462D300881556 /* MotionMusicPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionMusicPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE49E412DD462D400881556 /* MotionMusicPlayerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionMusicPlayerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE49E4B2DD462D400881556 /* MotionMusicPlayerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MotionMusicPlayerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +72,23 @@
 		2FE49E712DD462F000881556 /* WatchMotionData Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WatchMotionData Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2FE49E7B2DD462F000881556 /* WatchMotionData Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "WatchMotionData Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2FAD7EAE2DDD21130056679B /* Exceptions for "WatchMotionData Watch App" folder in "WatchMotionData Watch AppTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2FE49E702DD462F000881556 /* WatchMotionData Watch AppTests */;
+		};
+		2FAD7EAF2DDD219B0056679B /* Exceptions for "WatchMotionData Watch App" folder in "WatchMotionData Watch App" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2FE49E612DD462EC00881556 /* WatchMotionData Watch App */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		2FE49E322DD462D300881556 /* MotionMusicPlayer */ = {
@@ -89,6 +108,10 @@
 		};
 		2FE49E632DD462EC00881556 /* WatchMotionData Watch App */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2FAD7EAF2DDD219B0056679B /* Exceptions for "WatchMotionData Watch App" folder in "WatchMotionData Watch App" target */,
+				2FAD7EAE2DDD21130056679B /* Exceptions for "WatchMotionData Watch App" folder in "WatchMotionData Watch AppTests" target */,
+			);
 			path = "WatchMotionData Watch App";
 			sourceTree = "<group>";
 		};
@@ -109,6 +132,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FCCD1A32DD5C77000711328 /* WatchConnectivity.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +174,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2FCCD1A12DD5C77000711328 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FCCD1A22DD5C77000711328 /* WatchConnectivity.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2FE49E272DD462D300881556 = {
 			isa = PBXGroup;
 			children = (
@@ -159,6 +191,7 @@
 				2FE49E632DD462EC00881556 /* WatchMotionData Watch App */,
 				2FE49E742DD462F000881556 /* WatchMotionData Watch AppTests */,
 				2FE49E7E2DD462F000881556 /* WatchMotionData Watch AppUITests */,
+				2FCCD1A12DD5C77000711328 /* Frameworks */,
 				2FE49E312DD462D300881556 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -617,6 +650,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MotionMusicPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = A5XLR83FP4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -654,6 +688,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MotionMusicPlayer/Preview Content\"";
+				DEVELOPMENT_TEAM = A5XLR83FP4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
@@ -776,6 +811,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchMotionData Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = A5XLR83FP4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMotionData;
@@ -805,6 +841,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"WatchMotionData Watch App/Preview Content\"";
+				DEVELOPMENT_TEAM = A5XLR83FP4;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = WatchMotionData;

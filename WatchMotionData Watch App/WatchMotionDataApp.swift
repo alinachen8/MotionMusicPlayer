@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct WatchMotionData_Watch_AppApp: App {
+    @WKApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
         WindowGroup {
             ContentView()
