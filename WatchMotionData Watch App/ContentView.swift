@@ -16,9 +16,9 @@ struct ContentView: View {
 
             Group {
                 Text("Accelerometer")
-                Text("X: \(motionManager.x, specifier: "%.2f")")
-                Text("Y: \(motionManager.y, specifier: "%.2f")")
-                Text("Z: \(motionManager.z, specifier: "%.2f")")
+                Text("X: \(motionManager.accelX, specifier: "%.2f")")
+                Text("Y: \(motionManager.accelY, specifier: "%.2f")")
+                Text("Z: \(motionManager.accelZ, specifier: "%.2f")")
             }
 
             Divider().padding(.vertical, 4)
@@ -34,7 +34,6 @@ struct ContentView: View {
         .padding()
         .onAppear {
             motionManager.startStreaming()
-//            motionManager.testGyroscopeAvailability()
         }
         .onDisappear {
             motionManager.stopStreaming()
@@ -45,4 +44,5 @@ struct ContentView: View {
 #Preview {
     ContentView()
 }
+
 

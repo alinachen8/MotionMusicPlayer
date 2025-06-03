@@ -20,45 +20,22 @@ class MotionManager: ObservableObject {
     private let motionManager = CMMotionManager()
     private let session = WCSession.default
     
+    private var startTime: TimeInterval? // Store the start time
 
-    @Published var x: Double = 0.0
-    @Published var y: Double = 0.0
-    @Published var z: Double = 0.0
+    @Published var accelX: Double = 0.0
+    @Published var accelY: Double = 0.0
+    @Published var accelZ: Double = 0.0
 
     @Published var gyroX: Double = 0.0
     @Published var gyroY: Double = 0.0
     @Published var gyroZ: Double = 0.0
 
     func startStreaming() {
-        // Accelerometer
-        if motionManager.isAccelerometerAvailable {
-            motionManager.accelerometerUpdateInterval = 0.2
-            motionManager.startAccelerometerUpdates(to: .main) { data, error in
-                guard let data = data else { return }
-
-                DispatchQueue.main.async {
-                    self.x = data.acceleration.x
-                    self.y = data.acceleration.y
-                    self.z = data.acceleration.z
-
-                    let message = [
-                        "x": self.x,
-                        "y": self.y,
-                        "z": self.z
-                    ]
-                    if self.session.isReachable {
-                        self.session.sendMessage(message, replyHandler: nil, errorHandler: { error in
-                            print("Error sending accelerometer data: \(error.localizedDescription)")
-                        })
-                    }
-                }
-            }
-        } else {
-            print("Accelerometer not available")
-        }
+        self.startTime = Date().timeIntervalSince1970 // Set start time when streaming starts
+        deleteAllCSVFiles() // Delete all CSV files at the start of each run
         
         if motionManager.isDeviceMotionAvailable {
-            motionManager.deviceMotionUpdateInterval = 0.2
+            motionManager.deviceMotionUpdateInterval = 0.01
             motionManager.startDeviceMotionUpdates(to: .main) { [weak self] motion, error in
                 guard let self = self, let motion = motion else { return }
 
@@ -67,40 +44,11 @@ class MotionManager: ObservableObject {
         } else {
             print("Device motion not available")
         }
-
-
-//        // Gyroscope
-//        if motionManager.isGyroAvailable {
-//            motionManager.gyroUpdateInterval = 0.2
-//            motionManager.startGyroUpdates(to: .main) { data, error in
-//                guard let data = data else { return }
-//
-//                DispatchQueue.main.async {
-//                    self.gyroX = data.rotationRate.x
-//                    self.gyroY = data.rotationRate.y
-//                    self.gyroZ = data.rotationRate.z
-//
-//                    let gyroMessage = [
-//                        "gyroX": self.gyroX,
-//                        "gyroY": self.gyroY,
-//                        "gyroZ": self.gyroZ
-//                    ]
-//                    if self.session.isReachable {
-//                        self.session.sendMessage(gyroMessage, replyHandler: nil, errorHandler: { error in
-//                            print("Error sending gyroscope data: \(error.localizedDescription)")
-//                        })
-//                    }
-//                }
-//            }
-//        } else {
-//            print("Gyroscope not available")
-//        }
     }
 
 
     func stopStreaming() {
-        motionManager.stopAccelerometerUpdates()
-        motionManager.stopGyroUpdates()
+        motionManager.stopDeviceMotionUpdates()
     }
     
     private func processDeviceMotion(_ motion: CMDeviceMotion, type: MovementType) {
@@ -108,16 +56,60 @@ class MotionManager: ObservableObject {
         let attitude = motion.attitude
         let rotationRate = motion.rotationRate
         
+        // more of my own changes
+        let ax = accel.x
+        let ay = accel.y
+        let az = accel.z
+        
+        print("Acceleration")
+        print("x: \(ax)")
+        print("y: \(ay)")
+        print("z: \(az)")
+        print("\n")
+        
+        let attitude_pitch = attitude.pitch
+        let attitude_roll = attitude.roll
+        let attitude_yaw = attitude.yaw
+        
+        print("Attitude")
+        print("Pitch: \(attitude_pitch)")
+        print("Roll: \(attitude_roll)")
+        print("Yaw: \(attitude_yaw)")
+        print("\n")
+        
+        let rx = rotationRate.x
+        let ry = rotationRate.y
+        let rz = rotationRate.z
+        
+        print("Rotation")
+        print("x: \(rx)")
+        print("y: \(ry)")
+        print("z: \(rz)")
+        
+        let magnitude = sqrt((rx * rx) + (ry * ry) + (rz * rz))
+        
+        // Update published properties
+        DispatchQueue.main.async {
+            self.accelX = ax
+            self.accelY = ay
+            self.accelZ = az
+            
+            self.gyroX = rx
+            self.gyroY = ry
+            self.gyroZ = rz
+        }
+        
+        // Use elapsed time since start
+        let now = Date().timeIntervalSince1970
+        let elapsed = (startTime != nil) ? now - startTime! : 0
+        print("Time elapsed since start: \(elapsed) seconds")
+        let csvLine = "\(elapsed),\(ax),\(ay),\(az),\(rx),\(ry),\(rz),\(attitude_pitch),\(attitude_roll),\(attitude_yaw)\n"
+        writeLineToCSV(line: csvLine)
 
-        // First: check for shaking (priority)
-        let rx = abs(rotationRate.x)
-        let ry = abs(rotationRate.y)
-        let rz = abs(rotationRate.z)
-        let magnitude = sqrt(rx * rx + ry * ry + rz * rz)
 
         if magnitude > 5 {
             print("🤚 Wrist shaking detected! Magnitude: \(magnitude)")
-//            return   Exit early so moveUp doesn't also trigger
+            return  // Exit early so moveUp doesn't also trigger
         }
 
         // Then: check for upward motion only if no shaking
@@ -125,21 +117,53 @@ class MotionManager: ObservableObject {
             print("⬆️ Arm moving upward detected (z: \(accel.z))")
         }
     }
+    
+    private func writeLineToCSV(line: String) {
+        let fileName = "motion_data.csv"
+        let fileManager = FileManager.default
 
-    func testGyroscopeAvailability() {
-        print("Gyroscope available? \(motionManager.isGyroAvailable)")
+        do {
+            let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
+            guard let documentDirectory = urls.first else { return }
 
-        if motionManager.isDeviceMotionAvailable {
-            motionManager.deviceMotionUpdateInterval = 0.2
-            motionManager.startDeviceMotionUpdates(to: .main) { motion, error in
-                if let motion = motion {
-                    let r = motion.rotationRate
-                    print("rotationRate = x:\(r.x), y:\(r.y), z:\(r.z)")
-                }
+            let fileURL = documentDirectory.appendingPathComponent(fileName)
+            print("Writing to CSV file at: \(fileURL.path)") // Debug log
+
+            // If file doesn't exist, create and write header first
+            if !fileManager.fileExists(atPath: fileURL.path) {
+                let header = "timestamp,accel_x,accel_y,accel_z,rotation_x,rotation_y,rotation_z, pitch,roll,yaw\n"
+                try header.write(to: fileURL, atomically: true, encoding: .utf8)
+                print("CSV file created with header.") // Debug log
             }
-        } else {
-            print("❌ DeviceMotion not available")
+
+            // Append line
+            let fileHandle = try FileHandle(forWritingTo: fileURL)
+            fileHandle.seekToEndOfFile()
+            if let data = line.data(using: .utf8) {
+                fileHandle.write(data)
+                print("Line appended to CSV: \(line)") // Debug log
+            }
+            fileHandle.closeFile()
+
+        } catch {
+            print("Failed to write to CSV: \(error)") // Debug log
         }
     }
-    
+
+    private func deleteAllCSVFiles() {
+        let fileManager = FileManager.default
+        do {
+            let urls = fileManager.urls(for: .documentDirectory, in: .userDomainMask)
+            guard let documentDirectory = urls.first else { return }
+            let fileURLs = try fileManager.contentsOfDirectory(at: documentDirectory, includingPropertiesForKeys: nil)
+            for fileURL in fileURLs {
+                if fileURL.pathExtension == "csv" {
+                    try fileManager.removeItem(at: fileURL)
+                    print("Deleted CSV file: \(fileURL.lastPathComponent)")
+                }
+            }
+        } catch {
+            print("Failed to delete CSV files: \(error)")
+        }
+    }
 }
