@@ -117,7 +117,7 @@ class MotionManager: ObservableObject {
 
         if magnitude > 5 {
             print("🤚 Wrist shaking detected! Magnitude: \(magnitude)")
-            return  // Exit early so moveUp doesn't also trigger
+//            return   Exit early so moveUp doesn't also trigger
         }
 
         // Then: check for upward motion only if no shaking
@@ -126,56 +126,20 @@ class MotionManager: ObservableObject {
         }
     }
 
+    func testGyroscopeAvailability() {
+        print("Gyroscope available? \(motionManager.isGyroAvailable)")
 
-//        switch type {
-//        case .moveUp:
-//            // Detect strong upward movement
-//            if accel.z > 0.8 {
-//                print("⬆️ Arm moving upward detected (z: \(accel.z))")
-//            }
-//
-//        case .shaking:
-//            // Detect rapid wrist shaking using rotationRate
-//            let shakeThreshold = 2.0  // Lowered from 4.0 to be more sensitive
-//
-//            let rx = abs(rotationRate.x)
-//            let ry = abs(rotationRate.y)
-//            let rz = abs(rotationRate.z)
-//            
-//            let magnitude = sqrt(rx*rx + ry*ry + rz*rz)
-//            print("🌀 rotationRate magnitude: \(magnitude) (x: \(rx), y: \(ry), z: \(rz))")
-//
-//
-//            // Optionally, log rotation rate for fine-tuning
-////            print("🌀 rotationRate = x:\(rx), y:\(ry), z:\(rz)")
-//
-//            if rx > shakeThreshold || ry > shakeThreshold || rz > shakeThreshold {
-//                print("🤚 Wrist shaking detected!")
-//            }
-//
-//        case .none:
-//            // Do nothing
-//            break
-//        }
-//    }
-    
-//    func testGyroscopeAvailability() {
-//        print("Gyroscope available? \(motionManager.isGyroAvailable)")
-//
-//        if motionManager.isDeviceMotionAvailable {
-//            motionManager.deviceMotionUpdateInterval = 0.2
-//            motionManager.startDeviceMotionUpdates(to: .main) { motion, error in
-//                if let motion = motion {
-//                    let r = motion.rotationRate
-//                    print("rotationRate = x:\(r.x), y:\(r.y), z:\(r.z)")
-//                }
-//            }
-//        } else {
-//            print("❌ DeviceMotion not available")
-//        }
-//    }
-
-
-    
+        if motionManager.isDeviceMotionAvailable {
+            motionManager.deviceMotionUpdateInterval = 0.2
+            motionManager.startDeviceMotionUpdates(to: .main) { motion, error in
+                if let motion = motion {
+                    let r = motion.rotationRate
+                    print("rotationRate = x:\(r.x), y:\(r.y), z:\(r.z)")
+                }
+            }
+        } else {
+            print("❌ DeviceMotion not available")
+        }
+    }
     
 }

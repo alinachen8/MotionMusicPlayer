@@ -34,7 +34,7 @@ struct ContentView: View {
         .padding()
         .onAppear {
             motionManager.startStreaming()
-//            motionManager.testGyroscopeAvaila bility()
+//            motionManager.testGyroscopeAvailability()
         }
         .onDisappear {
             motionManager.stopStreaming()

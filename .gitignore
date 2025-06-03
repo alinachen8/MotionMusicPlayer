@@ -1,0 +1,11 @@
+*.xcuserstate
+*.xcuserdatad/
+*.xcuserdata/ 
+
+DerivedData/
+build/
+*.xcworkspace/xcuserdata/
+
+.DS_Store 
+
+MotionMusicPlayer.xcodeproj/project.xcworkspace/xcuserdata/alinachen.xcuserdatad/UserInterfaceState.xcuserstate
