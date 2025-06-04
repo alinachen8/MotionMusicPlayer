@@ -118,131 +118,147 @@ data_types_dict = { k: [] for k in raw_data_types }
 # and processes the incoming data
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
 
-    # Bind the socket to the host and port
-    s.bind((HOST, PORT))
+            # Bind the socket to the host and port
+            s.bind((HOST, PORT))
 
-    # Listen for incoming connections
-    s.listen(5)
-    print(f"Server listening on {HOST}:{PORT}")
+            # Listen for incoming connections
+            s.listen(5)
+            print(f"Server listening on {HOST}:{PORT}")
 
-    # Accept a connection
-    # This will block until a client connects
-    conn, addr = s.accept()
+            # Accept a connection
+            # This will block until a client connects
+            conn, addr = s.accept()
 
-    #with a connection established, we can now handle the client
-    with conn:
-        #print('Connected by', addr)
-        # Wait for a request from the client
-
-
-        while True:
-
-            # Reset the start time for each new connection
-            start_time = time.time()
-
-            # Clear the data types dictionary for each new connection
-            data_types_dict.clear()
-
-            # Receive data from the client
-            data = conn.recv(1024)
-
-            def handle_client(conn, addr):
-                print(f"Connected by {addr}")
-                while True:
-                    start_time = time.time()
-                    data_types_dict.clear()
-                    data = conn.recv(1024)
-                    if data:
-                        while time.time() - start_time < 2:
-                            data = conn.recv(1024)
-                            if not data:
-                                continue
-                            decoded_data = data.decode('utf-8')
-                            decoded_json_data = json.loads(decoded_data)
-                            for key in decoded_json_data:
-                                if key in data_types_dict:
-                                    data_types_dict[key].append(decoded_json_data[key])
-                        full_features = full_feature_extraction(data_types_dict)
-                        model_prediction = model_predict(full_features)
-                        conn.sendall(model_prediction.encode('utf-8'))
-                    else:
+            last_received_time = time.time()
+            print(f"Connection established with {addr}")
+            #with a connection established, we can now handle the client
+            conn.settimeout(120)
+            with conn:
+                while time.time() - last_received_time < 210:
+                
+                    print('Connected with: ', addr)
+                    # Wait for a request from the client
+                    try:
+                        data = conn.recv(1024)
+                    except socket.timeout:
+                        print("No data received for 120 seconds, closing connection.")
                         break
-                conn.close()
-
-            client_thread = threading.Thread(target=handle_client, args=(conn, addr), daemon=True)
-            client_thread.start()
-
-            # Later, you can check if the thread is alive:
-            print(f"Client thread alive? {client_thread.is_alive()}")
-            # Or wait for it to finish (if not daemon):
-            
-            stop_event = threading.Event()
-       
-            if data:
-                while time.time() - start_time < 2:
-                    data = conn.recv(1024)
-
-                    if not data:
-                        continue
-
-                    decoded_data = data.decode('utf-8')
-                    decoded_json_data = json.loads(decoded_data)
-
-                    acceleration = decoded_json_data.get('accel', {})
-                    rotation = decoded_json_data.get('gyro', {})
-                    attitude = decoded_json_data.get('attitude', {})
-
-                    for direction in acceleration:
-
-                        key = f'accel_{direction}'
-                        if key in data_types_dict:
-                            data_types_dict[key].append(decoded_json_data[key])
-                        else:
-                            print(f"Key {key} not found in data_types_dict")
-                    
-                    for direction in rotation:
-                        key = f'rotation_{direction}'
-
-                        if key in data_types_dict:
-                            data_types_dict[key].append(decoded_json_data[key])
-                        else:
-                            print(f"Key {key} not found in data_types_dict")
-                    
-                    for position in attitude:
-                        if key in data_types_dict:
-                            data_types_dict[position].append(decoded_json_data[position])
-                        else:
-                            print(f"Key {position} not found in data_types_dict")
-
-                full_features = full_feature_extraction(data_types_dict)
-
-                model_prediction = model_predict(full_features)
-
-                conn.sendall(model_prediction.encode('utf-8'))
-
-            client_thread.join()
+                    if data:
+                        print(f"Received data: {data.decode('utf-8')}\n")
+                        last_received_time = time.time()
+                    print(f"Time since last data received: {time.time() - last_received_time} seconds")
+                    time.sleep(5)
+            print("No data received for 210 seconds, closing connection.")
                 
 
+            #     while True:
 
+            #         # Reset the start time for each new connection
+            #         start_time = time.time()
 
+            #         # Clear the data types dictionary for each new connection
+            #         data_types_dict.clear()
+
+            #         # Receive data from the client
+            #         data = conn.recv(1024)
+
+            #         def handle_client(conn, addr):
+            #             print(f"Connected by {addr}")
+            #             while True:
+            #                 start_time = time.time()
+            #                 data_types_dict.clear()
+            #                 data = conn.recv(1024)
+            #                 if data:
+            #                     while time.time() - start_time < 2:
+            #                         data = conn.recv(1024)
+            #                         if not data:
+            #                             continue
+            #                         decoded_data = data.decode('utf-8')
+            #                         decoded_json_data = json.loads(decoded_data)
+            #                         for key in decoded_json_data:
+            #                             if key in data_types_dict:
+            #                                 data_types_dict[key].append(decoded_json_data[key])
+            #                     full_features = full_feature_extraction(data_types_dict)
+            #                     model_prediction = model_predict(full_features)
+            #                     conn.sendall(model_prediction.encode('utf-8'))
+            #                 else:
+            #                     break
+            #             conn.close()
+
+            #         client_thread = threading.Thread(target=handle_client, args=(conn, addr), daemon=True)
+            #         client_thread.start()
+
+            #         # Later, you can check if the thread is alive:
+            #         print(f"Client thread alive? {client_thread.is_alive()}")
+            #         # Or wait for it to finish (if not daemon):
+                    
+            #         stop_event = threading.Event()
             
+            #         if data:
+            #             while time.time() - start_time < 2:
+            #                 data = conn.recv(1024)
 
-            
-            
+            #                 if not data:
+            #                     continue
+
+            #                 decoded_data = data.decode('utf-8')
+            #                 decoded_json_data = json.loads(decoded_data)
+
+            #                 acceleration = decoded_json_data.get('accel', {})
+            #                 rotation = decoded_json_data.get('gyro', {})
+            #                 attitude = decoded_json_data.get('attitude', {})
+
+            #                 for direction in acceleration:
+
+            #                     key = f'accel_{direction}'
+            #                     if key in data_types_dict:
+            #                         data_types_dict[key].append(decoded_json_data[key])
+            #                     else:
+            #                         print(f"Key {key} not found in data_types_dict")
+                            
+            #                 for direction in rotation:
+            #                     key = f'rotation_{direction}'
+
+            #                     if key in data_types_dict:
+            #                         data_types_dict[key].append(decoded_json_data[key])
+            #                     else:
+            #                         print(f"Key {key} not found in data_types_dict")
+                            
+            #                 for position in attitude:
+            #                     if key in data_types_dict:
+            #                         data_types_dict[position].append(decoded_json_data[position])
+            #                     else:
+            #                         print(f"Key {position} not found in data_types_dict")
+
+            #             full_features = full_feature_extraction(data_types_dict)
+
+            #             model_prediction = model_predict(full_features)
+
+            #             conn.sendall(model_prediction.encode('utf-8'))
+
+            #         client_thread.join()
+                        
 
 
 
-        # while data:
+                    
 
-        #     #print(f"Received data: {data}\n")
-        #     # If you want to process the received data, you can do so here
-        #     # For now, we just print it
-        #     # data = receive_message(conn)
-        #     # if not data:
-        #     #     break
-        # #print(f"Received data: {data}\n")
+                    
+                    
 
-        
-        # if data:
-        #     # Send features as JSON string
-        #     conn.sendall(features_bytes)
+
+
+            #     # while data:
+
+            #     #     #print(f"Received data: {data}\n")
+            #     #     # If you want to process the received data, you can do so here
+            #     #     # For now, we just print it
+            #     #     # data = receive_message(conn)
+            #     #     # if not data:
+            #     #     #     break
+            #     # #print(f"Received data: {data}\n")
+
+                
+                # if data:
+                #     # Send features as JSON string
+                #     conn.sendall(features_bytes)
