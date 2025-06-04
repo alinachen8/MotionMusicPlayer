@@ -1,5 +1,16 @@
 import socket
 
+
+#get it over a globsl network/ firewall/ 
+
+
+#polling, what achitecture
+
+
+#identify an object and know an unknown object
+
+
+
 HOST = '127.0.0.1'
 PORT = 65432
 

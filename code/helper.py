@@ -45,6 +45,7 @@ def psd_features(signal, fs=20.0):  # fs: sampling frequency
         "meanPSD": mean_psd,
         "stdPSD": std_psd,
         "maxPSD": max_psd,
+        "minPSD": np.min(psd),
         "medianPSD": median_psd,
         "entroS": entropy
     }
