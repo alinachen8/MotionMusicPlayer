@@ -99,6 +99,24 @@ class MotionManager: ObservableObject {
             self.gyroZ = rz
         }
         
+        if session.isReachable {
+            let message: [String: Any] = [
+                "accelX": ax,
+                "accelY": ay,
+                "accelZ": az,
+                "gyroX": rx,
+                "gyroY": ry,
+                "gyroZ": rz,
+                "pitch": attitude_pitch,
+                "roll": attitude_roll,
+                "yaw": attitude_yaw
+            ]
+            
+            session.sendMessage(message, replyHandler: nil, errorHandler: { error in
+                print("❌ Failed to send message: \(error.localizedDescription)")
+            })
+        }
+        
         // Use elapsed time since start
         let now = Date().timeIntervalSince1970
         let elapsed = (startTime != nil) ? now - startTime! : 0
@@ -107,15 +125,15 @@ class MotionManager: ObservableObject {
         writeLineToCSV(line: csvLine)
 
 
-        if magnitude > 5 {
-            print("🤚 Wrist shaking detected! Magnitude: \(magnitude)")
-            return  // Exit early so moveUp doesn't also trigger
-        }
-
-        // Then: check for upward motion only if no shaking
-        if accel.z > 0.8 {
-            print("⬆️ Arm moving upward detected (z: \(accel.z))")
-        }
+//        if magnitude > 5 {
+//            print("🤚 Wrist shaking detected! Magnitude: \(magnitude)")
+//            return  // Exit early so moveUp doesn't also trigger
+//        }
+//
+//        // Then: check for upward motion only if no shaking
+//        if accel.z > 0.8 {
+//            print("⬆️ Arm moving upward detected (z: \(accel.z))")
+//        }
     }
     
     private func writeLineToCSV(line: String) {

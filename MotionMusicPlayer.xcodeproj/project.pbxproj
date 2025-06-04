@@ -88,6 +88,13 @@
 			);
 			target = 2FE49E612DD462EC00881556 /* WatchMotionData Watch App */;
 		};
+		2FE41D8F2DEFDEF200288F07 /* Exceptions for "MotionMusicPlayerUITests" folder in "MotionMusicPlayerUITests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 2FE49E4A2DD462D400881556 /* MotionMusicPlayerUITests */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -103,6 +110,9 @@
 		};
 		2FE49E4E2DD462D400881556 /* MotionMusicPlayerUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				2FE41D8F2DEFDEF200288F07 /* Exceptions for "MotionMusicPlayerUITests" folder in "MotionMusicPlayerUITests" target */,
+			);
 			path = MotionMusicPlayerUITests;
 			sourceTree = "<group>";
 		};
@@ -767,6 +777,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MotionMusicPlayerUITests/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app uses the local network to connect to a server.";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
@@ -788,6 +800,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MotionMusicPlayerUITests/Info.plist;
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app uses the local network to connect to a server.";
 				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
 				MACOSX_DEPLOYMENT_TARGET = 15.0;
 				MARKETING_VERSION = 1.0;
