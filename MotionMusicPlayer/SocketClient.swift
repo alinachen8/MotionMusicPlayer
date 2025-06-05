@@ -36,9 +36,9 @@ class SocketClient {
                 break
             }
         }
-        
-        // Start the connection
+        // 👇 YOU NEED THIS to initiate the connection!
         connection?.start(queue: queue)
+        print("🔌 Socket connection started")
     }
     
     func send(json: [String: Any]) {
@@ -105,3 +105,38 @@ class SocketClient {
         }
     }
 }
+
+
+
+extension SocketClient {
+    func close() {
+        connection?.cancel()
+        connection = nil
+        print("🔌 Socket connection closed")
+    }
+}
+
+print("🔌 Initializing SocketClient...")
+let client: SocketClient = SocketClient.shared
+// Example usage of both play and pause actions
+client.send(json: ["action": "play", "song": "example.mp3"])
+client.send(json: ["action": "pause"])
+
+let endTime = Date().addingTimeInterval(300) // 5 minutes = 300 seconds
+while Date() < endTime {
+    print("Sending play command...")
+    client.send(json: ["action": "pause"])
+    Thread.sleep(forTimeInterval: 5)
+
+    if let input = readLine(strippingNewline: true), input.lowercased() == "x" {
+        print("Exiting loop due to 'x' key press.")
+        break
+    }
+}
+
+client.close()
+// Example usage:
+// client.close()
+// client.send(json: ["action": "play", "song": "example.mp3"])
+// client.send(json: ["action": "pause"])
+// client.send(json: ["action": "stop"])
