@@ -23,6 +23,10 @@ class MotionReceiver: NSObject, ObservableObject, WCSessionDelegate {
             session = WCSession.default
             session?.delegate = self
             session?.activate()
+            
+            // Initialize socket connection
+            print("Initializing socket connection...")
+            _ = SocketClient.shared  // This will trigger the connection
         } else {
             print("❌ WCSession not supported")
         }
@@ -41,7 +45,7 @@ class MotionReceiver: NSObject, ObservableObject, WCSessionDelegate {
         SocketClient.shared.send(json: json)
     }
 
-    // Here’s where we receive motion data
+    // Here's where we receive motion data
     func session(_ session: WCSession, didReceiveMessage message: [String : Any]) {
         DispatchQueue.main.async {
             print("📡 Received motion data:")

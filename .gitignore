@@ -8,4 +8,8 @@ build/
 
 .DS_Store 
 
-MotionMusicPlayer.xcodeproj/project.xcworkspace/xcuserdata/alinachen.xcuserdatad/UserInterfaceState.xcuserstate
+MotionMusicPlayer.xcodeproj/project.xcworkspace/xcuserdata/alinachen.xcuserdatad/UserInterfaceState.xcuserstate*.xcodeproj/xcshareddata/
+# Xcode workspace user settings
+*.xcworkspace/xcuserdata/
+*.xcodeproj/xcuserdata/
+*.xcodeproj/xcshareddata/

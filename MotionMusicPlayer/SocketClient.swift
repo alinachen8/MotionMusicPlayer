@@ -14,8 +14,8 @@ class SocketClient {
     private var connection: NWConnection?
     private let queue = DispatchQueue(label: "SocketClientQueue")
     
-    private let host: NWEndpoint.Host = "192.168.1.100" // !! UPDATE
-    private let port: NWEndpoint.Port = 65432 // !! UPDATE
+    private let host: NWEndpoint.Host = "10.0.0.203" // Your computer's IP address
+    private let port: NWEndpoint.Port = 65433 // Updated port to match server
     
     private init() {
         connect()
@@ -36,6 +36,9 @@ class SocketClient {
                 break
             }
         }
+        
+        // Start the connection
+        connection?.start(queue: queue)
     }
     
     func send(json: [String: Any]) {
@@ -44,32 +47,58 @@ class SocketClient {
             return
         }
 
+//        do {
+//            // Print the JSON we're about to send
+//            print("📤 About to send JSON:", json)
+//            
+//            // Convert to JSON data
+//            let jsonData = try JSONSerialization.data(withJSONObject: json, options: [])
+//            
+//            // Print the raw JSON string for debugging
+//            if let jsonString = String(data: jsonData, encoding: .utf8) {
+//                print("📤 Raw JSON string:", jsonString)
+//            }
+//            
+//            // Send the data
+//            connection.send(content: jsonData, completion: .contentProcessed { error in
+//                if let error = error {
+//                    print("❌ Send error: \(error)")
+//                } else {
+//                    print("✅ JSON sent successfully")
+//                }
+//            })
+//            
+//            // Optional: receive response from server
+//            receive()
+//        } catch {
+//            print("❌ JSON serialization error: \(error)")
+//            print("❌ Failed to serialize JSON:", json)
+//        }
         do {
-            var data = try JSONSerialization.data(withJSONObject: json, options: [])
-            if let newline = "\n".data(using: .utf8) {
-                data.append(newline)  // newline-delimited JSON
-            }
-            
-            connection.send(content: data, completion: .contentProcessed { error in
-                if let error = error {
-                    print("❌ Send error: \(error)")
-                } else {
-                    print("📤 Sent JSON to server")
+                    var data = try JSONSerialization.data(withJSONObject: json, options: [])
+                    if let newline = "\n".data(using: .utf8) {
+                        data.append(newline)  // newline-delimited JSON
+                    }
+                    
+                    connection.send(content: data, completion: .contentProcessed { error in
+                        if let error = error {
+                            print("❌ Send error: \(error)")
+                        } else {
+                            print("📤 Sent JSON to server")
+                        }
+                    })
+                    
+                    // Optional: receive response from server
+                    receive()
+                } catch {
+                    print("❌ JSON serialization error: \(error)")
                 }
-            })
-            
-            // Optional: receive response from server
-            receive()
-        } catch {
-            print("❌ JSON serialization error: \(error)")
-        }
     }
-        
+    
     private func receive() {
         connection?.receive(minimumIncompleteLength: 1, maximumLength: 1024) { data, _, _, error in
             if let data = data, let response = String(data: data, encoding: .utf8) {
                 print("📥 Received from server: \(response)")
-                // Do something with the response
             } else if let error = error {
                 print("❌ Receive error: \(error)")
             }

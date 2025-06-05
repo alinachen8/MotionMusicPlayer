@@ -6,5 +6,7 @@
 	<array>
 		<string>gyroscope</string>
 	</array>
+	<key>WKCompanionAppBundleIdentifier</key>
+	<string>cs396ml.MotionMusicPlayer</string>
 </dict>
 </plist>
