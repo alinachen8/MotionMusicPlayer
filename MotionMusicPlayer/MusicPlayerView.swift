@@ -102,16 +102,16 @@ struct MusicPlayerView: View {
             }
             .padding(.top)
             .onChange(of: socket.classification) { gesture in
-                print("🎯 Gesture received: \(gesture)")
+                print("Gesture received: \(gesture)")
 
                 switch gesture {
-                case "pause_gesture":
+                case "stop":
                     audioManager.togglePlayPause()
-                case "next_gesture":
+                case "rotate_next":
                     audioManager.nextTrack()
-                case "prev_gesture":
+                case "rotate_prev":
                     audioManager.previousTrack()
-                case "like_gesture":
+                case "like":
                     audioManager.toggleLike()
                 default:
                     break
