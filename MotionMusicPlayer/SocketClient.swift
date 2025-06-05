@@ -8,7 +8,8 @@
 import Foundation
 import Network
 
-class SocketClient {
+class SocketClient: ObservableObject {
+    @Published var classification: String = ""
     static let shared = SocketClient()
     
     private var connection: NWConnection?
@@ -98,12 +99,34 @@ class SocketClient {
     private func receive() {
         connection?.receive(minimumIncompleteLength: 1, maximumLength: 1024) { data, _, _, error in
             if let data = data, let response = String(data: data, encoding: .utf8) {
-                print("📥 Received from server: \(response)")
+                let cleaned = response.trimmingCharacters(in: .whitespacesAndNewlines)
+                print("📥 Raw response: \(cleaned)")
+
+                if let jsonData = cleaned.data(using: .utf8) {
+                    do {
+                        if let parsed = try JSONSerialization.jsonObject(with: jsonData) as? [String: Any],
+                           let gesture = parsed["prediction"] as? String,
+                           let status = parsed["status"] as? String, status == "complete" {
+                            DispatchQueue.main.async {
+                                self.classification = gesture
+                            }
+                        } else {
+                            print("⚠️ Missing 'prediction' or 'status'")
+                        }
+                    } catch {
+                        print("❌ JSON parse error: \(error)")
+                    }
+                }
             } else if let error = error {
                 print("❌ Receive error: \(error)")
             }
+
+            // Continue receiving future messages
+            self.receive()
         }
     }
+
+
 }
 
 

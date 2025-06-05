@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MusicPlayerView: View {
     @StateObject private var audioManager = AudioManager.shared
+    @StateObject private var socket = SocketClient.shared
 
     var body: some View {
         ZStack {
@@ -20,6 +21,9 @@ struct MusicPlayerView: View {
                                     .fontWeight(.semibold)
                                     .padding(.top, 40)
                                     .foregroundColor(.black)
+                Text("🔍 Gesture: \(socket.classification)")
+                    .font(.caption)
+                    .foregroundColor(.gray)
                 
                 Spacer(minLength: 40)
 
@@ -97,6 +101,23 @@ struct MusicPlayerView: View {
                 Spacer()
             }
             .padding(.top)
+            .onChange(of: socket.classification) { gesture in
+                print("🎯 Gesture received: \(gesture)")
+
+                switch gesture {
+                case "pause_gesture":
+                    audioManager.togglePlayPause()
+                case "next_gesture":
+                    audioManager.nextTrack()
+                case "prev_gesture":
+                    audioManager.previousTrack()
+                case "like_gesture":
+                    audioManager.toggleLike()
+                default:
+                    break
+                }
+            }
+
         }
     }
 }
