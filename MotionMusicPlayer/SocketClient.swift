@@ -8,7 +8,8 @@
 import Foundation
 import Network
 
-class SocketClient {
+class SocketClient: ObservableObject {
+    @Published var classification: String = ""
     static let shared = SocketClient()
     
     private var connection: NWConnection?
@@ -72,13 +73,34 @@ class SocketClient {
     private func receive() {
         connection?.receive(minimumIncompleteLength: 1, maximumLength: 1024) { data, _, _, error in
             if let data = data, let response = String(data: data, encoding: .utf8) {
-                print("📥 Received from server: \(response)")
-                // Do something with the response
+                let cleaned = response.trimmingCharacters(in: .whitespacesAndNewlines)
+                print("📥 Raw response: \(cleaned)")
+
+                if let jsonData = cleaned.data(using: .utf8) {
+                    do {
+                        if let parsed = try JSONSerialization.jsonObject(with: jsonData) as? [String: Any],
+                           let gesture = parsed["prediction"] as? String,
+                           let status = parsed["status"] as? String, status == "complete" {
+                            DispatchQueue.main.async {
+                                self.classification = gesture
+                            }
+                        } else {
+                            print("⚠️ Missing 'prediction' or 'status'")
+                        }
+                    } catch {
+                        print("❌ JSON parse error: \(error)")
+                    }
+                }
             } else if let error = error {
                 print("❌ Receive error: \(error)")
             }
+
+            // Continue receiving future messages
+            self.receive()
         }
     }
+
+
 }
 
 
@@ -90,28 +112,3 @@ extension SocketClient {
         print("🔌 Socket connection closed")
     }
 }
-
-print("🔌 Initializing SocketClient...")
-let client: SocketClient = SocketClient.shared
-// Example usage of both play and pause actions
-client.send(json: ["action": "play", "song": "example.mp3"])
-client.send(json: ["action": "pause"])
-
-let endTime = Date().addingTimeInterval(300) // 5 minutes = 300 seconds
-while Date() < endTime {
-    print("Sending play command...")
-    client.send(json: ["action": "pause"])
-    Thread.sleep(forTimeInterval: 5)
-
-    if let input = readLine(strippingNewline: true), input.lowercased() == "x" {
-        print("Exiting loop due to 'x' key press.")
-        break
-    }
-}
-
-client.close()
-// Example usage:
-// client.close()
-// client.send(json: ["action": "play", "song": "example.mp3"])
-// client.send(json: ["action": "pause"])
-// client.send(json: ["action": "stop"])
