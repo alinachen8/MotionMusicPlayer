@@ -125,8 +125,6 @@ class SocketClient: ObservableObject {
             self.receive()
         }
     }
-
-
 }
 
 
