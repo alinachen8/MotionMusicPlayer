@@ -15,7 +15,8 @@ class SocketClient: ObservableObject {
     private var connection: NWConnection?
     private let queue = DispatchQueue(label: "SocketClientQueue")
     
-    private let host: NWEndpoint.Host = "10.0.0.203" // Your computer's IP address
+//    private let host: NWEndpoint.Host = "10.105.23.41" // Your computer's IP address
+    private let host: NWEndpoint.Host = "10.0.0.203"
     private let port: NWEndpoint.Port = 65433 // Updated port to match server
     
     private init() {
