@@ -19,8 +19,8 @@ label_order = ['accel_x', 'accel_y', 'accel_z',
                'rotation_x', 'rotation_y', 'rotation_z', 
                'pitch', 'roll', 'yaw']
 
-WINDOW_SIZE = 180  # Number of points to use for prediction
-OVERLAP = 80      # Number of points to overlap between windows
+WINDOW_SIZE = 150  # Number of points to use for prediction
+OVERLAP = 50      # Number of points to overlap between windows
 NEW_POINTS_NEEDED = WINDOW_SIZE - OVERLAP  # Number of new points needed for next prediction
 sampling_frequency = 100
 
@@ -99,14 +99,15 @@ def start_socket_server():
                                     
                                     # Process data if we have collected enough new points
                                     if len(data_buffer) == WINDOW_SIZE and new_points_collected >= NEW_POINTS_NEEDED:
-                                        print(f"\nProcessing window of {WINDOW_SIZE} points...")
-                                        print(f"New points collected since last prediction: {new_points_collected}")
+                                        # print(f"\nProcessing window of {WINDOW_SIZE} points...")
+                                        # print(f"New points collected since last prediction: {new_points_collected}")
                                         
                                         # Convert to DataFrame
                                         df = pd.DataFrame(data_buffer)
                                         
                                         # Get prediction
                                         gesture_prediction = gesture_inference(df, sampling_frequency)
+                                        print(f"Gesture prediction: {gesture_prediction}")
                                         
                                         # Create a response dictionary
                                         response = {
@@ -121,7 +122,7 @@ def start_socket_server():
                                         for _ in range(WINDOW_SIZE - OVERLAP):
                                             data_buffer.popleft()
                                         
-                                        print(f"Kept {OVERLAP} points for next window...")
+                                        # print(f"Kept {OVERLAP} points for next window...")
                                         
                                         # Reset new points counter
                                         new_points_collected = 0
@@ -149,8 +150,3 @@ def start_socket_server():
 
 if __name__ == "__main__":
     data = start_socket_server()
-    print("\nFinal DataFrame:")
-    print(data)
-    print(f"\nCollected {len(data)} data points")
-    print('\n')
-    print(f"INFERENCE: {gesture_inference(data, 100)}")

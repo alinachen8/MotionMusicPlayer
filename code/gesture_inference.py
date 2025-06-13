@@ -5,17 +5,10 @@ import torch
 import torch.nn as nn
 
 
-# ENTIRE
-scaler_path = '/Users/pranavxiyer/Documents/northwestern/classes/first/spring/machine learning and sensing/MotionMusicPlayer/scaler/entire_scaler.joblib'
-random_forest_path = '/Users/pranavxiyer/Documents/northwestern/classes/first/spring/machine learning and sensing/MotionMusicPlayer/models/entire_random_forest.joblib'
-
-
-# OLD
-# scaler_path = '/Users/pranavxiyer/Documents/northwestern/classes/first/spring/machine learning and sensing/MotionMusicPlayer/scaler/standard_scaler.joblib'
-# random_forest_path = '/Users/pranavxiyer/Documents/northwestern/classes/first/spring/machine learning and sensing/MotionMusicPlayer/models/random_forest.joblib'
-
-
-model_path = '/Users/pranavxiyer/Documents/northwestern/classes/first/spring/machine learning and sensing/MotionMusicPlayer/models/standard_nn_linear.pth'
+# Paths for loading models, scalar
+scaler_path = '/Users/pranavxiyer/Documents/northwestern/classes/first/spring/machine learning and sensing/MotionMusicPlayer/scaler/scaler.joblib'
+random_forest_path = '/Users/pranavxiyer/Documents/northwestern/classes/first/spring/machine learning and sensing/MotionMusicPlayer/models/random_forest.joblib'
+model_path = '/Users/pranavxiyer/Documents/northwestern/classes/first/spring/machine learning and sensing/MotionMusicPlayer/models/neural_net.pth'
 
 idx_to_label = {
     0: 'rotate_next',
@@ -60,7 +53,6 @@ def gesture_inference(df, sampling_frequency, random_forest=True):
             nn.Linear(32, output_size)
         )
 
-        model_path = '/Users/pranavxiyer/Documents/northwestern/classes/first/spring/machine learning and sensing/MotionMusicPlayer/models/entire_nn_linear.pth'
         model.load_state_dict(torch.load(model_path))
         model.eval()
 
